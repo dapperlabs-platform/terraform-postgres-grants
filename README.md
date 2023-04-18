@@ -5,7 +5,7 @@ module "postgres_waterhose-admin" {
   source           = "github.com/dapperlabs-platform/terraform-postgres-grants?ref={ref}"
   database         = "the-database"
   role             = "the-database-role"
-  tables           = ["tables", "go", "here]
+  tables           = ["tables", "go", "here"]
   table_privileges = ["SELECT", "INSERT", "UPDATE", "DELETE"]
   users            = ["example@dapperlabs.com"]
 }
