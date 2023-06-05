@@ -1,6 +1,7 @@
 variable "role" {
   description = "Name of the role to create"
   type        = string
+  default     = null
 }
 
 variable "database" {
@@ -28,6 +29,7 @@ variable "database_privileges" {
 variable "tables" {
   description = "Tables in the database"
   type        = list(string)
+  default     = []
 }
 
 variable "users" {
