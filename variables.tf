@@ -14,8 +14,14 @@ variable "schema" {
   default     = "public"
 }
 
+variable "default_table_privileges" {
+  description = "Default privileges to apply to all tables in the database"
+  type        = list(string)
+  default     = []
+}
+
 variable "table_privileges" {
-  description = "Privileges to apply to tables in the database"
+  description = "Privileges to apply to specified tables (variable) in the database"
   type        = list(string)
 }
 
@@ -28,9 +34,16 @@ variable "database_privileges" {
 variable "tables" {
   description = "Tables in the database"
   type        = list(string)
+  default     = []
 }
 
 variable "users" {
   description = "Users who need access to the database and tables"
   type        = list(string)
+}
+
+variable "owner" {
+  description = "Schema owner, for granting default privileges"
+  type        = string
+  default     = "postgres"
 }
