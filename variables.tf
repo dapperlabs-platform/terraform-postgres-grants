@@ -23,6 +23,7 @@ variable "default_table_privileges" {
 variable "table_privileges" {
   description = "Privileges to apply to specified tables (variable) in the database"
   type        = list(string)
+  default     = []
 }
 
 variable "database_privileges" {
