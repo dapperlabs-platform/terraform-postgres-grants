@@ -5,6 +5,13 @@ locals {
   }
 }
 
+provider "postgresql" {
+  scheme   = "gcppostgres"
+  host     = var.host
+  username = var.owner
+  password = var.owner_password
+}
+
 resource "postgresql_role" "the_role" {
   name = var.role
 }

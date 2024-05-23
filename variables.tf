@@ -3,6 +3,11 @@ variable "role" {
   type        = string
 }
 
+variable "host" {
+  description = "The instance that hosts the database"
+  type        = string
+}
+
 variable "database" {
   description = "Database this applies to"
   type        = string
@@ -47,4 +52,11 @@ variable "owner" {
   description = "Schema owner, for granting default privileges"
   type        = string
   default     = "postgres"
+}
+
+variable "owner_password" {
+  description = "Schema owner password, used for granting privileges"
+  type        = string
+  default     = ""
+  sensitive   = true
 }
